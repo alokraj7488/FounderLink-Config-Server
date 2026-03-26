@@ -3,8 +3,3 @@ server:
 spring:
   datasource:
     url: ${DB_AUTH_URL}
-rabbitmq:
-  queue:
-    user-registered: ${RABBITMQ_QUEUE_USER_REGISTERED}
-  routing-key:
-    user-registered: ${RABBITMQ_ROUTING_KEY_USER_REGISTERED}
