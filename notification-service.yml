@@ -3,16 +3,6 @@ server:
 spring:
   datasource:
     url: ${DB_NOTIFICATION_URL}
-rabbitmq:
-  queue:
-    startup-created: ${RABBITMQ_QUEUE_STARTUP_CREATED}
-    investment-created: ${RABBITMQ_QUEUE_INVESTMENT_CREATED}
-    investment-approved: ${RABBITMQ_QUEUE_INVESTMENT_APPROVED}
-    team-invite-sent: ${RABBITMQ_QUEUE_TEAM_INVITE_SENT}
-    startup-approved: ${RABBITMQ_QUEUE_STARTUP_APPROVED}
-    user-registered: ${RABBITMQ_QUEUE_USER_REGISTERED}
 springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+  api-docs: {path: /v3/api-docs}
+  swagger-ui: {path: /swagger-ui.html}
