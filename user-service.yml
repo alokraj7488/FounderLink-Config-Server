@@ -1,14 +1,11 @@
 server:
   port: 8082
-
 spring:
   datasource:
-    url: ${DB_USER_URL:jdbc:postgresql://localhost:5432/founderlink_user_db}
-
+    url: ${DB_USER_URL}
 rabbitmq:
   queue:
-    user-registered: user.registered.queue
-
+    user-registered: ${RABBITMQ_QUEUE_USER_REGISTERED}
 springdoc:
   api-docs:
     path: /v3/api-docs
