@@ -15,9 +15,9 @@ management:
   tracing:
     sampling:
       probability: 1.0
-    zipkin:
-      tracing:
-        endpoint: ${ZIPKIN_URL}
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL}
 
 spring:
   jpa:
@@ -45,3 +45,17 @@ app:
 
 rabbitmq:
   exchange: ${RABBITMQ_EXCHANGE}
+  queue:
+    user-registered: ${RABBITMQ_QUEUE_USER_REGISTERED}
+    startup-created: ${RABBITMQ_QUEUE_STARTUP_CREATED}
+    startup-approved: ${RABBITMQ_QUEUE_STARTUP_APPROVED}
+    investment-created: ${RABBITMQ_QUEUE_INVESTMENT_CREATED}
+    investment-approved: ${RABBITMQ_QUEUE_INVESTMENT_APPROVED}
+    team-invite-sent: ${RABBITMQ_QUEUE_TEAM_INVITE_SENT}
+  routing-key:
+    user-registered: ${RABBITMQ_ROUTING_KEY_USER_REGISTERED}
+    startup-created: ${RABBITMQ_ROUTING_KEY_STARTUP_CREATED}
+    startup-approved: ${RABBITMQ_ROUTING_KEY_STARTUP_APPROVED}
+    investment-created: ${RABBITMQ_ROUTING_KEY_INVESTMENT_CREATED}
+    investment-approved: ${RABBITMQ_ROUTING_KEY_INVESTMENT_APPROVED}
+    team-invite-sent: ${RABBITMQ_ROUTING_KEY_TEAM_INVITE_SENT}
