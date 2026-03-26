@@ -1,18 +1,13 @@
 server:
   port: 8085
-
 spring:
   datasource:
-    url: ${DB_TEAM_URL:jdbc:postgresql://localhost:5432/founderlink_team_db}
-
-
+    url: ${DB_TEAM_URL}
 rabbitmq:
-  exchange: ${RABBITMQ_EXCHANGE:founderlink.exchange}
   queue:
-    team-invite-sent: team.invite.sent.queue
+    team-invite-sent: ${RABBITMQ_QUEUE_TEAM_INVITE_SENT}
   routing-key:
-    team-invite-sent: team.invite.sent
-
+    team-invite-sent: ${RABBITMQ_ROUTING_KEY_TEAM_INVITE_SENT}
 springdoc:
   api-docs:
     path: /v3/api-docs
