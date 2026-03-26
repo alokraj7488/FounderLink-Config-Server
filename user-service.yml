@@ -3,11 +3,6 @@ server:
 spring:
   datasource:
     url: ${DB_USER_URL}
-rabbitmq:
-  queue:
-    user-registered: ${RABBITMQ_QUEUE_USER_REGISTERED}
 springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+  api-docs: {path: /v3/api-docs}
+  swagger-ui: {path: /swagger-ui.html}
