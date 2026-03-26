@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+      defaultZone: ${EUREKA_SERVER_URL}
     fetch-registry: true
     register-with-eureka: true
   instance:
@@ -15,9 +15,9 @@ management:
   tracing:
     sampling:
       probability: 1.0
-  zipkin:
-    tracing:
-      endpoint: ${ZIPKIN_URL:http://localhost:9411/api/v2/spans}
+    zipkin:
+      tracing:
+        endpoint: ${ZIPKIN_URL}
 
 spring:
   jpa:
@@ -28,18 +28,20 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:YOUR_DATABASE_PASSWORD}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
-
   rabbitmq:
-    host: ${RABBITMQ_HOST:localhost}
-    port: ${RABBITMQ_PORT:5672}
-    username: ${RABBITMQ_USERNAME:guest}
-    password: ${RABBITMQ_PASSWORD:YOUR_PASSWORD_HERE}
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
 
 app:
   jwt:
-    secret: ${JWT_SECRET:YOUR_SECRET_KEY_GOES_HERE}
-    expiration: ${JWT_EXPIRATION:86400000}
-    expiration-refresh: ${JWT_REFRESH_EXPIRATION:604800000}
+    secret: ${JWT_SECRET}
+    expiration: ${JWT_EXPIRATION}
+    expiration-refresh: ${JWT_REFRESH_EXPIRATION}
+
+rabbitmq:
+  exchange: ${RABBITMQ_EXCHANGE}
