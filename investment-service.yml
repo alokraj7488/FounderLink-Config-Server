@@ -3,14 +3,6 @@ server:
 spring:
   datasource:
     url: ${DB_INVESTMENT_URL}
-rabbitmq:
-  queue:
-    investment-created: ${RABBITMQ_QUEUE_INVESTMENT_CREATED}
-    investment-approved: ${RABBITMQ_QUEUE_INVESTMENT_APPROVED}
-    startup-approved: ${RABBITMQ_QUEUE_STARTUP_APPROVED}
-  routing-key:
-    investment-created: ${RABBITMQ_ROUTING_KEY_INVESTMENT_CREATED}
-    investment-approved: ${RABBITMQ_ROUTING_KEY_INVESTMENT_APPROVED}
 springdoc:
   api-docs:
     path: /v3/api-docs
