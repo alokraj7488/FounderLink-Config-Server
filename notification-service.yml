@@ -1,0 +1,21 @@
+server:
+  port: 8087
+
+spring:
+  datasource:
+    url: ${DB_NOTIFICATION_URL:jdbc:postgresql://localhost:5432/founderlink_notification_db}
+
+rabbitmq:
+  queue:
+    startup-created: startup.created.queue
+    startup-approved: startup.approved.queue
+    investment-created: investment.created.queue
+    investment-approved: investment.approved.queue
+    team-invite-sent: team.invite.sent.queue
+    user-registered: user.registered.queue
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

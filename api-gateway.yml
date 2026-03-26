@@ -1,0 +1,62 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**, /v3/api-docs/auth/**
+          filters:
+            - RewritePath=/v3/api-docs/auth/(?<path>.*), /v3/api-docs/${path}
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**, /v3/api-docs/users/**
+          filters:
+            - RewritePath=/v3/api-docs/users/(?<path>.*), /v3/api-docs/${path}
+        - id: startup-service
+          uri: lb://startup-service
+          predicates:
+            - Path=/startups/**, /v3/api-docs/startups/**
+          filters:
+            - RewritePath=/v3/api-docs/startups/(?<path>.*), /v3/api-docs/${path}
+        - id: team-service
+          uri: lb://team-service
+          predicates:
+            - Path=/teams/**, /v3/api-docs/teams/**
+          filters:
+            - RewritePath=/v3/api-docs/teams/(?<path>.*), /v3/api-docs/${path}
+        - id: investment-service
+          uri: lb://investment-service
+          predicates:
+            - Path=/investments/**, /v3/api-docs/investments/**
+          filters:
+            - RewritePath=/v3/api-docs/investments/(?<path>.*), /v3/api-docs/${path}
+        - id: messaging-service
+          uri: lb://messaging-service
+          predicates:
+            - Path=/messages/**, /v3/api-docs/messages/**
+          filters:
+            - RewritePath=/v3/api-docs/messages/(?<path>.*), /v3/api-docs/${path}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: Auth-Service
+        url: /v3/api-docs/auth
+      - name: User-Service
+        url: /v3/api-docs/users
+      - name: Startup-Service
+        url: /v3/api-docs/startups
+      - name: Team-Service
+        url: /v3/api-docs/teams
+      - name: Investment-Service
+        url: /v3/api-docs/investments
+      - name: Messaging-Service
+        url: /v3/api-docs/messages

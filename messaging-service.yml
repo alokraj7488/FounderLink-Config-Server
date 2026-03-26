@@ -1,0 +1,12 @@
+server:
+  port: 8086
+
+spring:
+  datasource:
+    url: ${DB_MESSAGING_URL:jdbc:postgresql://localhost:5432/founderlink_messaging_db}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

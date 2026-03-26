@@ -1,0 +1,23 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: startup-service
+  datasource:
+    url: ${DB_STARTUP_URL:jdbc:postgresql://localhost:5432/founderlink_startup_db}
+
+rabbitmq:
+  exchange: ${RABBITMQ_EXCHANGE:founderlink.exchange}
+  queue:
+    startup-created: startup.created.queue
+    startup-approved: startup.approved.queue
+  routing-key:
+    startup-created: startup.created
+    startup-approved: startup.approved
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

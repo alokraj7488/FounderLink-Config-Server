@@ -1,0 +1,20 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    url: ${DB_TEAM_URL:jdbc:postgresql://localhost:5432/founderlink_team_db}
+
+
+rabbitmq:
+  exchange: ${RABBITMQ_EXCHANGE:founderlink.exchange}
+  queue:
+    team-invite-sent: team.invite.sent.queue
+  routing-key:
+    team-invite-sent: team.invite.sent
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

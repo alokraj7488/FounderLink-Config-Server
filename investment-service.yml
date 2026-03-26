@@ -1,0 +1,23 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: ${DB_INVESTMENT_URL:jdbc:postgresql://localhost:5432/founderlink_investment_db}
+
+
+rabbitmq:
+  exchange: ${RABBITMQ_EXCHANGE:founderlink.exchange}
+  queue:
+    investment-created: investment.created.queue
+    investment-approved: investment.approved.queue
+    startup-approved: startup.approved.queue
+  routing-key:
+    investment-created: investment.created
+    investment-approved: investment.approved
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
