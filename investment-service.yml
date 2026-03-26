@@ -4,7 +4,5 @@ spring:
   datasource:
     url: ${DB_INVESTMENT_URL}
 springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+  api-docs: {path: /v3/api-docs}
+  swagger-ui: {path: /swagger-ui.html}
