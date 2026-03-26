@@ -1,21 +1,15 @@
 server:
   port: 8083
-
 spring:
-  application:
-    name: startup-service
   datasource:
-    url: ${DB_STARTUP_URL:jdbc:postgresql://localhost:5432/founderlink_startup_db}
-
+    url: ${DB_STARTUP_URL}
 rabbitmq:
-  exchange: ${RABBITMQ_EXCHANGE:founderlink.exchange}
   queue:
-    startup-created: startup.created.queue
-    startup-approved: startup.approved.queue
+    startup-created: ${RABBITMQ_QUEUE_STARTUP_CREATED}
+    startup-approved: ${RABBITMQ_QUEUE_STARTUP_APPROVED}
   routing-key:
-    startup-created: startup.created
-    startup-approved: startup.approved
-
+    startup-created: ${RABBITMQ_ROUTING_KEY_STARTUP_CREATED}
+    startup-approved: ${RABBITMQ_ROUTING_KEY_STARTUP_APPROVED}
 springdoc:
   api-docs:
     path: /v3/api-docs
