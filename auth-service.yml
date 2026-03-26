@@ -1,11 +1,10 @@
 server:
   port: 8081
-
 spring:
   datasource:
-    url: ${DB_AUTH_URL:jdbc:postgresql://localhost:5432/founderlink_auth_db}
-
+    url: ${DB_AUTH_URL}
 rabbitmq:
-  exchange: ${RABBITMQ_EXCHANGE:founderlink.exchange}
+  queue:
+    user-registered: ${RABBITMQ_QUEUE_USER_REGISTERED}
   routing-key:
-    user-registered: user.registered
+    user-registered: ${RABBITMQ_ROUTING_KEY_USER_REGISTERED}
