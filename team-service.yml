@@ -3,13 +3,6 @@ server:
 spring:
   datasource:
     url: ${DB_TEAM_URL}
-rabbitmq:
-  queue:
-    team-invite-sent: ${RABBITMQ_QUEUE_TEAM_INVITE_SENT}
-  routing-key:
-    team-invite-sent: ${RABBITMQ_ROUTING_KEY_TEAM_INVITE_SENT}
 springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
+  api-docs: {path: /v3/api-docs}
+  swagger-ui: {path: /swagger-ui.html}
