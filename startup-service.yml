@@ -3,13 +3,6 @@ server:
 spring:
   datasource:
     url: ${DB_STARTUP_URL}
-rabbitmq:
-  queue:
-    startup-created: ${RABBITMQ_QUEUE_STARTUP_CREATED}
-    startup-approved: ${RABBITMQ_QUEUE_STARTUP_APPROVED}
-  routing-key:
-    startup-created: ${RABBITMQ_ROUTING_KEY_STARTUP_CREATED}
-    startup-approved: ${RABBITMQ_ROUTING_KEY_STARTUP_APPROVED}
 springdoc:
   api-docs:
     path: /v3/api-docs
